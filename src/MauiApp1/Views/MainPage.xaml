@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="MauiApp1.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="{.Title}"
+    x:DataType="MainViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout
+                Padding="20"
+                Spacing="25">
+
+                <Label
+                    FontSize="32"
+                    HorizontalOptions="Center"
+                    SemanticProperties.HeadingLevel="Level1"
+                    Style="{StaticResource MauiLabel}"
+                    Text="Hello, World!" />
+
+                <Label
+                    FontSize="18"
+                    HorizontalOptions="Center"
+                    SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                    SemanticProperties.HeadingLevel="Level1"
+                    Style="{StaticResource MauiLabel}"
+                    Text="Welcome to .NET Multi-platform App UI" />
+
+                <!-- Classic Binding Works -->
+                <!--
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    HorizontalOptions="Center"
+                    Style="{StaticResource MauiLabel}"
+                    Text="{Binding CountText}" />
+
+                <Button
+                    Command="{Binding IncrementCommand}"
+                    HorizontalOptions="Center"
+                    SemanticProperties.Hint="Counts the number of times you click"
+                    Style="{StaticResource PrimaryAction}"
+                    Text="Click me" />
+                -->
+
+                <!-- XAML C# Expression Fails -->
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    HorizontalOptions="Center"
+                    Style="{StaticResource MauiLabel}"
+                    Text="{CountText}" />
+
+                <Button
+                    Command="{IncrementCommand}"
+                    HorizontalOptions="Center"
+                    SemanticProperties.Hint="Counts the number of times you click"
+                    Style="{StaticResource PrimaryAction}"
+                    Text="Click me" />
+
+                <Image
+                    HeightRequest="310"
+                    HorizontalOptions="Center"
+                    SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                    Source="dotnet_bot.png"
+                    WidthRequest="250" />
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
